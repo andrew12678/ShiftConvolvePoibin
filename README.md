@@ -40,11 +40,14 @@ An simple example with the uniform distribution
 ```R
 library(ShiftConvolvePoibin)
 set.seed(18)
-n = 10000
-p = runif(n)
-s0 = 5200
-shiftpval(p, s0)	# compute the p-value, or right tail at s0
-shiftpval(1-p, n-s0)	# compute the p-value, or left tail at s0
+n=1000
+probs <- runif(n)
+x <- c(200, 500, 800)
+p <- seq(0, 1, 0.01)
+dpoisbin(x,probs,method="ShiftConvolve",log.p=FALSE)
+ppoisbin(x,probs,method="ShiftConvolve",lower.tail=FALSE,log.p=TRUE)
+qpoisbin(p,probs,method="ShiftConvolve",lower.tail=TRUE,log.p=FALSE)
+rpoisbin(n,probs)
 ```
 
 ## References
