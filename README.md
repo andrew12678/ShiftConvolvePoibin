@@ -1,4 +1,8 @@
 # ShiftConvolve
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/andrew12678/ShiftConvolvePoibin.svg?branch=master)](https://travis-ci.org/andrew12678/ShiftConvolvePoibin)
+<!-- badges: end -->
+
 `ShiftConvolve` is a R package which uses exponential shifting and the Fast Fourier Transformations (FFT) to compute the (right) tail of distribution of the Poisson Binomial Distribution. 
 This package makes use of the minimalist Fast Fourier Transform library known as [minFFT](https://github.com/aimukhin/minfft) to perform the necessary DFT and Inverse DFT computations.
 
@@ -48,7 +52,4 @@ shiftpval(1-p, n-s0)	# compute the p-value, or left tail at s0
 Peres, N., Lee, A., and Keich, U. (2020). Exactly computing the tail of the Poisson-Binomial Distribution. 
 [arXiv:2004.07429](https://arxiv.org/abs/2004.07429)
 
-<!-- badges: start -->
-[![Travis build status](https://travis-ci.com/andrew12678/ShiftConvolvePoibin.svg?branch=master)](https://travis-ci.com/andrew12678/ShiftConvolvePoibin)
-[![Travis build status](https://travis-ci.org/andrew12678/ShiftConvolvePoibin.svg?branch=master)](https://travis-ci.org/andrew12678/ShiftConvolvePoibin)
-<!-- badges: end -->
+
