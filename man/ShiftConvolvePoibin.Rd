@@ -51,8 +51,8 @@ compute the distribution of the Poisson Binomial Distribution
 \section{References}{
 
 Peres, N., Lee, A., and Keich, U. (2020). Exactly computing the tail of the Poisson-Binomial Distribution.
-   \href{arXiv:2004.07429}{
-   https://arxiv.org/abs/2004.07429}
+   \href{https://arxiv.org/abs/2004.07429}{
+   arXiv:2004.07429}
 }
 
 \examples{
