@@ -38,9 +38,14 @@ and must be either \code{"ShiftConvolve"} or \code{"DC"}}
 \item{n}{Number of observations. If \code{length(n) > 1}, the
 length is taken to be the number required.}
 }
+\value{
+\code{dpoisbin} gives the density, \code{ppoisbin} computes the distribution
+function, \code{qpoisbin} gives the quantile function and \code{rpoisbin}
+generates random deviates.
+}
 \description{
 Density, distribution function, quantile function and random generation for
-the Poisson binomial distribution with the option of using the ShiftConvolve method.
+the Poisson binomial distribution with the option of using the ShiftConvolvePoibin method.
 }
 \details{
 Computing the Poisson Binomial Distribution using ShiftConvolve

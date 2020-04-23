@@ -12,7 +12,7 @@
 #'@author Andrew Ray Lee, Noah Peres and Uri Keich
 #'@description
 #'Density, distribution function, quantile function and random generation for
-#'the Poisson binomial distribution with the option of using the ShiftConvolve method.
+#'the Poisson binomial distribution with the option of using the ShiftConvolvePoibin method.
 #'
 #'@section References:
 #'Peres, N., Lee, A., and Keich, U. (2020). Exactly computing the tail of the Poisson-Binomial Distribution.
@@ -34,7 +34,10 @@
 #'                   (if \code{TRUE}; default) or \eqn{P[X > x]} (if
 #'                   \code{FALSE}).
 #'
-#'
+#'@return
+#'\code{dpoisbin} gives the density, \code{ppoisbin} computes the distribution
+#'function, \code{qpoisbin} gives the quantile function and \code{rpoisbin}
+#'generates random deviates.
 #'
 #'
 #'@examples
@@ -372,7 +375,7 @@ shift_pb_dist <- function(x, probs, lower.tail = TRUE, log.p=FALSE){
       }
       t0 <- 0
     }else{
-      closest <- x_ordinary[which.min(diff_x_pbd_mean)]
+      closest <- x_ordinary[which.min(abs(diff_x_pbd_mean))]
       if(log.p){
         pmf_computed <- shiftConvolveLog(probs, closest)
       }else{
@@ -477,7 +480,7 @@ shift_pb_density <- function(x, probs, log.p=FALSE){
       pmf_computed <- shiftConvolveLog(probs, S0 = -1)
       t0 <- 0
     }else{
-      closest <- x_ordinary[which.min(diff_x_pbd_mean)]
+      closest <- x_ordinary[which.min(abs(diff_x_pbd_mean))]
       pmf_computed <- shiftConvolveLog(probs, closest)
       U <- uniroot(shiftedmean, interval = c(-50,50), probs, closest, tol = 10^-16) #find a suitable shifting parameter
       t0 <- U$root
